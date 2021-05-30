@@ -10,7 +10,11 @@ if ($conn && $conn->connect_error) {
 
 
 function lista($conn){
-    $sql = "SELECT `room_number` AS `stanza`, `floor` AS `piano`, `beds` AS `letti` FROM `stanze`";
+    //$sql = "SELECT `room_number` AS `stanza`, `floor` AS `piano`, `beds` AS `letti` FROM `stanze`";
+    
+    $sql="SELECT `room_number` AS `stanza`, `floor` AS `piano`, `beds` AS `letti`,`configurazioni`.`description` AS `descrizione` FROM `prenotazioni` INNER JOIN `stanze` on `stanza_id`= `stanze`.`id` INNER JOIN `configurazioni` on `configurazione_id`= `configurazioni`.`id`;";
+
+
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
         // output data of each row
@@ -20,7 +24,7 @@ function lista($conn){
             <td>{$row['stanza']}</td>
             <td>{$row['piano']}</td>
             <td>{$row['letti']}</td>
-            <td><button onclick="openWin( {$row['letti']} )">Dettagli</button></td>
+            <td><button onclick="openWin('{$row['descrizione']}')">Dettagli</button></td>
             </tr>
             LNH;
 

@@ -1,1 +1,1 @@
-la camera ha le seguenti configurazioni <?echo ($_GET['ID']);?>
+la camera ha le seguenti configurazioni <?echo ($_GET['desc']);?>

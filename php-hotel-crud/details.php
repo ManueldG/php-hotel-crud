@@ -1,0 +1,1 @@
+la camera ha le seguenti configurazioni <?echo ($_GET['ID']);?>

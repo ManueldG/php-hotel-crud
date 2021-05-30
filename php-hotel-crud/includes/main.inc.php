@@ -23,6 +23,6 @@
 						  <tbody>
 						  
 						  <?
-						  $result = lista($conn);					  
+						  lista($conn);					  
 						  navigator($result);
 						  ?>

@@ -55,10 +55,10 @@ function lista($conn){
     } else {
         echo "query error";
     }
-    return $result;
+    
 }
 
-function navigator($result) {
+function navigator() {
     
     if ($pagNum > 1){
         $prev = $current -1;

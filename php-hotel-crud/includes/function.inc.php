@@ -21,9 +21,9 @@ function lista($conn){
         
         $page['current'] = $_GET['next'];
         $page['pagNum'] = $page['current'] +1 ;
-        $page['record'] = $page['current'] * $recordPage + 5;
+        $page['record'] = $recordPage;
         
-        $limit = "LIMIT ".($page['current'] * 5).",".$page['record'] ;
+        $limit = "LIMIT ".($page['current'] * $recordPage).",".$page['record'] ;
         
         $sql="SELECT `room_number` AS `stanza`, `floor` AS `piano`, `beds` AS `letti`,`configurazioni`.`description` AS `descrizione` FROM `prenotazioni` INNER JOIN `stanze` on `stanza_id`= `stanze`.`id` INNER JOIN `configurazioni` on `configurazione_id`= `configurazioni`.`id` ORDER BY `stanza` $limit;";
 
@@ -32,7 +32,7 @@ function lista($conn){
     
     $totalPage = $lastPage = ceil($conn->affected_rows/$page['record']);
     
-   var_dump($result);      
+    
     if ($result && $result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {

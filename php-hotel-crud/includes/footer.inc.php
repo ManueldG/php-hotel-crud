@@ -1,6 +1,9 @@
 
 						  </tbody>
 						</table>
+						<?php 
+						navigator($page['current'],$page['pagNum'],$page['record']);
+						?>
 					</div>
 				</div>
 			</div>
@@ -16,5 +19,6 @@
 
 
 <?
+
 $conn->close();
 

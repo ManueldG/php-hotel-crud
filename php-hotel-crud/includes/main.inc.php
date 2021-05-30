@@ -12,17 +12,16 @@
 					<div class="table-wrap">
 						<table class="table">
 						  <thead class="thead-primary">
-						    <tr>
-						    	<th>&nbsp;</th>
+						    <tr>						    	
 						    	<th>Stanza N°</th>
 						    	<th>Piano</th>
-						      <th>Letti</th>
+						     	<th>Letti</th>
+						     	<th>&nbsp;</th>
 						      
 						    </tr>
 						  </thead>
 						  <tbody>
 						  
 						  <?
-						  lista($conn);					  
-						  navigator($result);
+						  $page=lista($conn);
 						  ?>

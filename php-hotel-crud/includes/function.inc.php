@@ -17,13 +17,14 @@ function lista($conn){
         while($row = $result->fetch_assoc()) {
             $riga = <<<LNH
             <tr class="alert" role="alert">
-            <td></td>
             <td>{$row['stanza']}</td>
             <td>{$row['piano']}</td>
             <td>{$row['letti']}</td>
+            <td><button onclick="openWin( {$row['letti']} )">Dettagli</button></td>
             </tr>
             LNH;
-            
+
+
             echo $riga;
             
         }

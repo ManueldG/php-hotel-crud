@@ -5,7 +5,4 @@ include 'includes/function.inc.php';
 include 'includes/header.inc.php';
 include 'includes/main.inc.php';
 include 'includes/footer.inc.php';
-
-
-
 ?>
